@@ -6,21 +6,23 @@
     <title>Coding Quiz App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
 </head>
-<body>
+<body> 
 
     <div class="start-btn"><button>Start Quiz</button></div> 
 
         <div class="info_box">
             <div class="info-title">
-                <span>Some Rules of this Quiz</span> 
+                <span> Rules of this Quiz</span> 
              </div>
                 <div class="info-list">
-                    <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+                    <div class="info">1. You will have only <span>30 seconds</span> per each question.</div>
                     <div class="info">2. Once you select your answer, it can't be undone.</div>
-                    <div class="info">3. You can't select any option if time goes out. </output>.</div>
+                    <div class="info">3. You can't select any option if time goes out.</div>
                     <div class="info">4. You can't exit from Quiz if not finished.</div>
                     <div class="info">5. You'll get points on the basis of your correct answers.</div>
                 </div>
@@ -28,11 +30,64 @@
                     <button class="quit">Exit Quiz</button>
                     <button class="restart">Continue</button>
                 </div>
+            </div>
 
-
+        <div class="quiz_box">
+            <header>
+                <div class="title">Coding Quiz App</div>
+                <div class="timer">
+                    <div class="time_left_txt">Time Left</div>
+                    <div class="timer_sec">30</div>
+        </div>
+    </header>
+    <section>
+        <div class="que_text">
+            <span>What is an Array in Coding?</span>
+            </div>
+            <div class="option-list">
+                <div class="option">
+                <span>An array is commonly referred to as a collection of items stored at memory locations and easily sorted or searched</span>
+                <div class="icon check"><i class="fas fa-check"></i></div>
+            </div>
+                <div class="option">
+                    <span>An array is a single bracket that contains multiple items</span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                    </div>
+            <div class="option">
+                <span>An array is a collection of items that are rearranged.</span>
+            </div>
+                    <div class="option">
+                        <span>An array is a list of items that are only booleans.</span>
+                    </div>
+                </div>
+            </section>
+        
+        <footer>
+            <div class="total_que">
+                <span><p>2</p>of</p><p>5</p>Questions</span>
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
     </div>
+
+    <div class="result-box">
+        <div class="icon">
+            <i class="fa-solid fa-cube"></i>
+        </div>
+        <div class="complete-text">You've completed the Quiz!</div>
+        <div class="score-text">
+            <span> Your Score: 0</span>
+            </div>
+            <div class="buttons">
+                <button class="restart">Replay Quiz</button>
+                <button class="quit">Quit Quiz</button>
+            </div>
+        </div>
+
+
     
     
 
+    
 </body>
 </html>
