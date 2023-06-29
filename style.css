@@ -21,8 +21,10 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.info_box.activeInfo{
-    opacity: 0;
+.info_box.activeInfo,
+.quiz_box.activeQuiz{
+    z-index: 5;
+    opacity: 1;
     pointer-events: auto;
     transform: translate(-50%,-50%);
 }
