@@ -1,98 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<title>Coding Quiz App</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link href="style.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
-    
 </head>
-<body> 
 
-    <div class="start_btn"><button>Start Quiz</button></div> 
+<body>
 
-        <div class="info_box">
-            <div class="info-title">
-                <span> Rules of this Quiz</span> 
-             </div>
-                <div class="info-list">
-                    <div class="info">1. You will have only <span>30 seconds</span> per each question.</div>
-                    <div class="info">2. Once you select your answer, it can't be undone.</div>
-                    <div class="info">3. You can't select any option if time goes out.</div>
-                    <div class="info">4. You can't exit from Quiz if not finished.</div>
-                    <div class="info">5. You'll get points on the basis of your correct answers.</div>
-                </div>
-                <div class="buttons">
-                    
-                    <button class="quit">Exit Quiz</button>
-                    <button class="continue">Continue</button>
-                </div>
-            </div>
 
-        <div class="quiz_box">
-            <header>
-                <div class="title">Coding Quiz App</div>
-                <div class="timer">
-                    <div class="time_left_txt">Time Left</div>
-                    <div class="timer_sec">30</div>
-                    <div class="time_line"></div>
+ <header class="container-fluid mb-5">
+    
+    <div class="row">
+        
+        <div class="col-6">
+            
+            <button id="view-scores" type="button" class="btn btn-secondary d-inline-block mt-1">View High Scores</button>
         </div>
-    </header>
-    <section>
-        <div class="que_text">
-            <span>What is an Array in Coding?</span>
+        
+        <div class="col-6">
+            <p class="d-flex justify-content-end time">Time:15s</p>
+        </div>
+    </div>
+</header>
+
+<main>
+
+
+    <section class="container">
+
+        <section id="intro">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <h1 class="d-flex justify-content-center text-center">Coding Quiz Challenge</h1>
+                    <p class="d-flex justify-content-center text-center">Try to answer the following code questions within the time limit. The rules are to answer every question to the best of your ability.</p>
+                    <p class="d-flex justify-content-center text-center">Your score will be based on the time remaining after you answer all the questions. If you answer a question incorrectly, 10 seconds will be subtracted from your time.</p>
+                    <p class="d-flex justify-content-center text-center">Good luck!</p>
+                    <button id="start" type="button" class="btn btn-success mx-auto d-block">Start Quiz</button></p>
+                </div>
             </div>
-            <div class="option-list">
-                <div class="options">
-                <span>An array is commonly referred to as a collection of items stored at memory locations and easily sorted or searched</span>
-                <div class="icon check"><i class="fas fa-check"></i></div>
-            </div>
-                <div class="option">
-                    <span>An array is a single bracket that contains multiple items</span>
-                    <div class="icon cross"><i class="fas fa-times"></i></div>
+        </section>
+
+        <section id="questions">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <h2 id="question">You Ready?</h2>
+                    <ul class="px-0 py-0 nobullets">
+                        <li class="mb-3"><button id="answer1" value="0" type="button"
+                                class="btn btn-success ansBtn">Answer1</button></li>
+                        <li class="mb-3"><button id="answer2" value="1" type="button"
+                                class="btn btn-success ansBtn">Answer2</button></li>
+                        <li class="mb-3"><button id="answer3" value="2" type="button"
+                                class="btn btn-success ansBtn">Answer3</button></li>
+                        <li class="mb-3"><button id="answer4" value="3" type="button"
+                                class="btn btn-success ansBtn">Answer4</button></li>
+                    </ul>
+                    <div id="yesorno" class="font-weight-light font-italic">
+                        <p id="yesornotext"></p>
                     </div>
-            <div class="option">
-                <span>An array is a collection of items that are rearranged.</span>
+                </div>
             </div>
-                    <div class="option">
-                        <span>An array is a list of items that are only booleans.</span>
+        </section>
+
+
+<section id="highscores">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                            <h2>High Scores</h2>
+                            
+                            <ol id="score-list">
+                               
+                            </ol>
+                            <button id="goback" class="btn btn-success d-inline-block mx-1 my-1">Go back</button>
+                            <button id="clearscores" class="btn btn-success mx-1 my-1 d-inline-block">Clear scores</button>
                     </div>
                 </div>
             </section>
-        
-        <footer>
-            <div class="total_que">
-                <span><p>2</p>of</p><p>5</p>Questions</span>
-            </div>
-            <button class="next_btn">Next</button>
-        </footer>
-    </div>
 
-    <div class="result_box">
-        <div class="icon">
-            <i class="fa-solid fa-cube"></i>
-        </div>
-        <div class="complete-text">You've completed the Quiz!</div>
-        <div class="score-text">
-            <span> Your Score: 0</span>
-            </div>
-            <div class="buttons">
-                <button class="restart">Replay Quiz</button>
-                <button class="quit">Quit Quiz</button>
+
+
+<section id="complete" style="display: flex;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Quiz Complete!</h2>
+                    <p>Your final score is <span id="score"></span>. </p>
+                    <button type="button" class="btn btn-primary" id="submit-score">Submit</button>
+                </div>
             </div>
         </div>
 
+</section>
+</main>
 
- <script src="questions.js"></script>     
+<footer class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <p class="d-flex justify-content-center">Made by Alex <i class="fas fa-crown"></i></p>
+
+
 <script src="script.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
 
-    
-    
-
-    
 </body>
 </html>
